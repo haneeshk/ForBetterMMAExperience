@@ -1,0 +1,329 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11258,        320]
+NotebookOptionsPosition[     10472,        289]
+NotebookOutlinePosition[     10830,        305]
+CellTagsIndexPosition[     10787,        302]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "This program defines the identifty tensor, \[DoubleStruckCapitalI] \n\n",
+ StyleBox["\n",
+  FontSize->18],
+ "Subroutines:",
+ StyleBox["\n-",
+  FontSize->12],
+ "SIM\n\nThe subroutine SIM gives the simplifycations that result from noting \
+that \[DoubleStruckCapitalI] is the identity tensor.\nI have tested the above \
+subroutines extensively. They have passed all tests given.",
+ StyleBox["\n",
+  FontSize->18]
+}], "Text",
+ CellChangeTimes->{{3.6844439847113132`*^9, 3.6844440417723637`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"$Assumptions", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Element", "[", 
+        RowBox[{"A", ",", 
+         RowBox[{"Matrices", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"n", ",", "n"}], "}"}], ",", "Reals"}], "]"}]}], "]"}], 
+       ",", 
+       RowBox[{"Element", "[", 
+        RowBox[{"B", ",", 
+         RowBox[{"Matrices", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"n", ",", "n"}], "}"}], ",", "Reals"}], "]"}]}], "]"}], 
+       ",", 
+       RowBox[{"Element", "[", 
+        RowBox[{"G", ",", 
+         RowBox[{"Matrices", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"n", ",", "n"}], "}"}], ",", "Reals"}], "]"}]}], "]"}], 
+       ",", 
+       RowBox[{"Element", "[", 
+        RowBox[{"F", ",", 
+         RowBox[{"Matrices", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"n", ",", "n"}], "}"}], ",", "Reals"}], "]"}]}], "]"}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{"Element", "[", 
+        RowBox[{"a", ",", 
+         RowBox[{"Vectors", "[", 
+          RowBox[{"n", ",", "Reals"}], "]"}]}], "]"}], ",", 
+       RowBox[{"Element", "[", 
+        RowBox[{"b", ",", 
+         RowBox[{"Vectors", "[", 
+          RowBox[{"n", ",", "Reals"}], "]"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Element", "[", 
+        RowBox[{"\[DoubleStruckCapitalI]", ",", 
+         RowBox[{"Matrices", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"n", ",", "n"}], "}"}], ",", "Reals"}], "]"}]}], "]"}], 
+       ",", 
+       RowBox[{"Element", "[", 
+        RowBox[{"F", ",", 
+         RowBox[{"Matrices", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"n", ",", "n"}], "}"}], ",", "Reals"}], "]"}]}], "]"}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{"Id", "=", 
+        RowBox[{"IdentityMatrix", "[", "n", "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Element", "[", 
+        RowBox[{"x", ",", 
+         RowBox[{"Vectors", "[", 
+          RowBox[{"n", ",", "Reals"}], "]"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Element", "[", 
+        RowBox[{"y", ",", 
+         RowBox[{"Vectors", "[", 
+          RowBox[{"n", ",", "Reals"}], "]"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Element", "[", 
+        RowBox[{"c", ",", 
+         RowBox[{"Vectors", "[", 
+          RowBox[{"n", ",", "Reals"}], "]"}]}], "]"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SIM", "[", "expr_", "]"}], ":=", 
+    RowBox[{"expr", "//.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Dot", "[", 
+         RowBox[{"before___", ",", 
+          RowBox[{"MatrixPower", "[", 
+           RowBox[{"\[DoubleStruckCapitalI]", ",", "n_Integer"}], "]"}], ",", 
+          "after___"}], "]"}], "\[RuleDelayed]", 
+        RowBox[{"Dot", "[", 
+         RowBox[{"before", ",", "\[DoubleStruckCapitalI]", ",", "after"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Dot", "[", 
+          RowBox[{
+          "before___", ",", "\[DoubleStruckCapitalI]", ",", "tensor_", ",", 
+           "after___"}], "]"}], "/;", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"TensorDimensions", "[", "tensor", "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "===", 
+          RowBox[{
+           RowBox[{"TensorDimensions", "[", "\[DoubleStruckCapitalI]", "]"}], 
+           "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}]}], "\[RuleDelayed]", 
+        RowBox[{"Dot", "[", 
+         RowBox[{"before", ",", "tensor", ",", "after"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Plus", "[", 
+         RowBox[{"before___", ",", 
+          RowBox[{"MatrixPower", "[", 
+           RowBox[{"\[DoubleStruckCapitalI]", ",", "n_Integer"}], "]"}], ",", 
+          "after___"}], "]"}], "\[RuleDelayed]", 
+        RowBox[{"Plus", "[", 
+         RowBox[{"before", ",", "\[DoubleStruckCapitalI]", ",", "after"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Dot", "[", 
+          RowBox[{
+          "before___", ",", "tensor_", ",", "\[DoubleStruckCapitalI]", ",", 
+           "after___"}], "]"}], "/;", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"TensorDimensions", "[", "tensor", "]"}], "[", 
+           RowBox[{"[", 
+            RowBox[{"-", "1"}], "]"}], "]"}], "===", 
+          RowBox[{
+           RowBox[{"TensorDimensions", "[", "\[DoubleStruckCapitalI]", "]"}], 
+           "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}]}], "\[RuleDelayed]", 
+        RowBox[{"Dot", "[", 
+         RowBox[{"before", ",", "tensor", ",", "after"}], "]"}]}]}], 
+      "}"}]}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", " ", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.6843580765698757`*^9, 3.684358077526391*^9}, {
+  3.6843595743643312`*^9, 3.684359584592761*^9}, {3.684359781321823*^9, 
+  3.684359782107778*^9}, {3.684368606397016*^9, 3.684368611200569*^9}, {
+  3.684443675925449*^9, 3.684443682493046*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"P1", "=", 
+  RowBox[{"\[DoubleStruckCapitalI]", "-", 
+   RowBox[{"a", "\[TensorProduct]", "a"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"P2", "=", 
+  RowBox[{"\[DoubleStruckCapitalI]", "-", 
+   RowBox[{"b", "\[TensorProduct]", "b"}]}]}]}], "Input",
+ CellChangeTimes->{{3.68435808179671*^9, 3.6843580991844463`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[DoubleStruckCapitalI]", "-", 
+  RowBox[{"a", "\[TensorProduct]", "a"}]}]], "Output",
+ CellChangeTimes->{3.6843581004082336`*^9, 3.6843583839877996`*^9, 
+  3.684367004578376*^9, 3.684443701267664*^9}],
+
+Cell[BoxData[
+ RowBox[{"\[DoubleStruckCapitalI]", "-", 
+  RowBox[{"b", "\[TensorProduct]", "b"}]}]], "Output",
+ CellChangeTimes->{3.6843581004082336`*^9, 3.6843583839877996`*^9, 
+  3.684367004578376*^9, 3.684443701277319*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"TensorExpand", "[", 
+   RowBox[{"P1", ".", "P2"}], "]"}], "//", "SIM"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TensorExpand", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"P1", ".", "P2"}], ")"}], ".", "c"}], "]"}], "//", 
+  "SIM"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TensorExpand", "[", 
+   RowBox[{"P1", ".", 
+    RowBox[{"(", 
+     RowBox[{"P2", ".", "c"}], ")"}]}], "]"}], "//", 
+  "SIM"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.684358101979534*^9, 3.684358114970523*^9}, {
+   3.6843581483836517`*^9, 3.6843582186677523`*^9}, 3.68436701728543*^9, {
+   3.6844437059721813`*^9, 3.684443726094143*^9}, {3.684443793589329*^9, 
+   3.684443815115958*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[DoubleStruckCapitalI]", "-", 
+  RowBox[{"a", "\[TensorProduct]", "a"}], "+", 
+  RowBox[{
+   RowBox[{"a", ".", "b"}], " ", 
+   RowBox[{"a", "\[TensorProduct]", "b"}]}], "-", 
+  RowBox[{"b", "\[TensorProduct]", "b"}]}]], "Output",
+ CellChangeTimes->{{3.684358105310796*^9, 3.684358116469698*^9}, {
+   3.684358150134717*^9, 3.684358219154017*^9}, 3.684358387661481*^9, {
+   3.68436701085905*^9, 3.684367018221554*^9}, {3.68444370658932*^9, 
+   3.68444372694273*^9}, {3.6844438016825647`*^9, 3.684443815770352*^9}}],
+
+Cell[BoxData[
+ RowBox[{"c", "-", 
+  RowBox[{"a", " ", 
+   RowBox[{"a", ".", "c"}]}], "-", 
+  RowBox[{"b", " ", 
+   RowBox[{"b", ".", "c"}]}], "+", 
+  RowBox[{"a", " ", 
+   RowBox[{"a", ".", "b"}], " ", 
+   RowBox[{"b", ".", "c"}]}]}]], "Output",
+ CellChangeTimes->{{3.684358105310796*^9, 3.684358116469698*^9}, {
+   3.684358150134717*^9, 3.684358219154017*^9}, 3.684358387661481*^9, {
+   3.68436701085905*^9, 3.684367018221554*^9}, {3.68444370658932*^9, 
+   3.68444372694273*^9}, {3.6844438016825647`*^9, 3.6844438157803497`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"c", "-", 
+  RowBox[{"a", " ", 
+   RowBox[{"a", ".", "c"}]}], "-", 
+  RowBox[{"b", " ", 
+   RowBox[{"b", ".", "c"}]}], "+", 
+  RowBox[{"a", " ", 
+   RowBox[{"a", ".", "b"}], " ", 
+   RowBox[{"b", ".", "c"}]}]}]], "Output",
+ CellChangeTimes->{{3.684358105310796*^9, 3.684358116469698*^9}, {
+   3.684358150134717*^9, 3.684358219154017*^9}, 3.684358387661481*^9, {
+   3.68436701085905*^9, 3.684367018221554*^9}, {3.68444370658932*^9, 
+   3.68444372694273*^9}, {3.6844438016825647`*^9, 3.68444381578753*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[DoubleStruckCapitalI]", ".", 
+   RowBox[{"a", "\[TensorProduct]", "a"}]}], "//", 
+  "SIM"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TensorDimensions"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.684359287922476*^9, 3.684359317690291*^9}, {
+  3.68435936435182*^9, 3.6843594433656273`*^9}, {3.684443937278721*^9, 
+  3.684443952301077*^9}}],
+
+Cell[BoxData[
+ RowBox[{"a", "\[TensorProduct]", "a"}]], "Output",
+ CellChangeTimes->{{3.6843592892793713`*^9, 3.684359318406386*^9}, {
+  3.68435936898319*^9, 3.6843594442665663`*^9}, {3.684443939861722*^9, 
+  3.684443953552246*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"n", ",", "n"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6843592892793713`*^9, 3.684359318406386*^9}, {
+  3.68435936898319*^9, 3.6843594442665663`*^9}, {3.684443939861722*^9, 
+  3.684443953560329*^9}}]
+}, Open  ]]
+},
+WindowSize->{1204, 837},
+WindowMargins->{{-4, Automatic}, {2, Automatic}},
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 510, 13, 192, "Text"],
+Cell[1071, 35, 5287, 138, 335, "Input"],
+Cell[CellGroupData[{
+Cell[6383, 177, 338, 7, 46, "Input"],
+Cell[6724, 186, 225, 4, 28, "Output"],
+Cell[6952, 192, 225, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7214, 201, 729, 19, 80, "Input"],
+Cell[7946, 222, 537, 10, 28, "Output"],
+Cell[8486, 234, 530, 12, 28, "Output"],
+Cell[9019, 248, 527, 12, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9583, 265, 395, 8, 63, "Input"],
+Cell[9981, 275, 232, 4, 28, "Output"],
+Cell[10216, 281, 240, 5, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
