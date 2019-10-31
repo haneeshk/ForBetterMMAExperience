@@ -1,3 +1,6 @@
 (* ::Package:: *)
 
-CreateCoundtDown[tmin_]:=Module[{},Dynamic@ProgressIndicator[Clock[{0,60*tmin,1},60*tmin],{60*tmin,1}]]
+CreateCountDown[ttotal_]:=Module[{tbegin=AbsoluteTime[],min=60,x},
+x:=(AbsoluteTime[]-tbegin)/(min *ttotal);
+Grid[{{Dynamic[Refresh[PaddedForm[Grid[{{ttotal*(1-x),"min"}}],{6,2},NumberPadding->{"0", "0"}],UpdateInterval->1]],
+Dynamic[Refresh[ProgressIndicator[x,{ttotal,0}],UpdateInterval->1]],Dynamic[Refresh[PaddedForm[Grid[{{x*ttotal,"min"}}],{6,2},NumberPadding->{"0", "0"}],UpdateInterval->1]]}}]]
