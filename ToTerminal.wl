@@ -20,7 +20,7 @@ TerminalNb=OpenNB[nbName];
 SetOptions[TerminalNb,(*Background\[Rule]Black,*)FontFamily->"Courier",(*FontColor\[Rule]White,*)WindowSize->{800,500},WindowMovable->False,WindowMargins->{{Automatic,0}, {Automatic, 0}},Magnification->1.5];
 DateHK=DateString[{"DayNameShort",", ","MonthNameShort"," ","Day",", ","Year","\n","Hour12Short",":","Minute"}];
 SelectionMove[TerminalNb,Before,Notebook];
-NotebookWrite[TerminalNb,Cell[BoxData@ToBoxes[Evaluate[ReleaseHold[input]]],"Output",CellLabel->ToString[HoldForm[input]]],Before]];
+NotebookWrite[TerminalNb,Cell[BoxData@ToBoxes[Evaluate[ReleaseHold[input]]],"Output"],Before]];
 End[];
 EndPackage[];
 
