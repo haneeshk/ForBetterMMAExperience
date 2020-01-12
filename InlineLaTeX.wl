@@ -1,5 +1,6 @@
 (*Get@URLDownload[LocalSymbol["Githubpath"] <> "InlineLaTeX.wl"]*)
 (*Alt + M*)
+(*Need to escape backslashs *)
 
 Needs["MaTeX`"]
 ClearAll[M]
