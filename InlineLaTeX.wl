@@ -1,3 +1,6 @@
+(*Get@URLDownload[LocalSymbol["Githubpath"] <> "InlineLaTeX.wl"]*)
+(*Alt + M*)
+
 Needs["MaTeX`"]
 ClearAll[M]
 M[x_, fnt_: 14, blp_: Bottom] := 
