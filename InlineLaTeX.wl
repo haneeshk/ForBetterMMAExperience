@@ -16,6 +16,12 @@ SetAttributes[M, HoldAll]
 
 
 
-LaTeXHK`LIA[s_] := 
+(* LaTeXHK`LIA[s_] := 
  PopupWindow[MaTeX[#, FontSize -> s] , 
    StringReplace[#, "\\" -> "\\\\"]] & 
+ *)
+ 
+LaTeXHK`LIA[s_] := 
+   PopupWindow[MaTeX[#1, FontSize -> s], 
+     "LIA[" <> ToString[s] <> "][\"" <> 
+      StringReplace[#1, "\\" -> "\\\\"] <> "\"]"] &
