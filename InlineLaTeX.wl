@@ -3,10 +3,19 @@
 (*Need to escape backslashs *)
 
 Needs["MaTeX`"]
-ClearAll[M]
+AppendTo[$ContextPath, "LaTeXHK`"]
+
+
 M[x_, fnt_: 14, blp_: Bottom] := 
  Module[{exp}, 
   exp = MaTeX[ToString[x], FontSize -> fnt, ContentPadding -> True, 
     "DisplayStyle" -> False]
   (*Graphics[exp, BaselinePosition -> blp]*)]
 SetAttributes[M, HoldAll]
+
+
+
+
+LaTeXHK`LIA[s_] := 
+ PopupWindow[MaTeX[#, FontSize -> s] , 
+   StringReplace[#, "\\" -> "\\\\"]] & 
