@@ -11,7 +11,7 @@ These symbols will be rendered as \\xi
  
 Begin["Private`"];
 
-MaTeXFontSize=14;
+MaTeXFontSize=11;
 MaTeXPreamble={"\\usepackage[prefix=sol]{xcolor-solarized}","\\usepackage[scaled]{helvet}",
 "\\usepackage[T1]{fontenc}","\\renewcommand\\familydefault{\\sfdefault}"};
 
