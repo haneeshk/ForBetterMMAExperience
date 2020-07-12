@@ -1,0 +1,24 @@
+In[1]:=
+
+In[2]:= ClearAll[ech]
+SetAttributes[ech,HoldFirst]
+MaTeXFontSize=14;
+MaTeXPreamble={"\\usepackage[prefix=sol]{xcolor-solarized}","\\usepackage[scaled]{helvet}",
+"\\usepackage[T1]{fontenc}","\\renewcommand\\familydefault{\\sfdefault}"}
+<<MaTeX`;
+Out[5]= {\usepackage[prefix=sol]{xcolor-solarized},\usepackage[scaled]{helvet},\usepackage[T1]{fontenc},\renewcommand\familydefault{\sfdefault}}
+In[7]:= 
+
+symb1=MaTeX["{\\color{solbase01} L}",FontSize->MaTeXFontSize,Preamble->MaTeXPreamble];
+var1=Interpretation[symb1,L];
+symb2=MaTeX["{\\color{solbase00} D}",FontSize->MaTeXFontSize,Preamble->{"\\usepackage[prefix=sol]{xcolor-solarized}"}];
+ var2=Interpretation[symb2,Diameter];
+
+Format[L]:=MaTeX["{\\color{solviolet} L}",FontSize->14,FontSize->MaTeXFontSize, Preamble->MaTeXPreamble];
+Format[Diameter]:=MaTeX["{\\color{solmagenta} D}",FontSize->MaTeXFontSize,Preamble->MaTeXPreamble];
+In[13]:= Plot[Sin[],{,-\[Pi],\[Pi]}]
+Out[13]= 
+In[14]:= Series[1/(1+)^(1/2),{,0,3}]//TraditionalForm
+Out[14]//TraditionalForm= 1-( )/2+(3 ^2 ^2)/8-(5 ^3 ^3)/16+O(^4)
+In[15]:= (+)^10//Expand
+Out[15]= ^10+10 ^9 +45 ^8 ^2+120 ^7 ^3+210 ^6 ^4+252 ^5 ^5+210 ^4 ^6+120 ^3 ^7+45 ^2 ^8+10  ^9+^10
