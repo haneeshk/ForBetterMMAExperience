@@ -8,7 +8,7 @@ xi and eta will be shortcuts to the
 variable xiVar and some authomatically created symbols;
 These symbols will be rendered as \\xi
  and \\eta ";
- 
+
 Begin["Private`"];
 
 MaTeXFontSize=14;
