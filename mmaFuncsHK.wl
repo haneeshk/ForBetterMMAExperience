@@ -1,4 +1,6 @@
-BeginPackage["mmaFuncsHK`"]
+(* ::Package:: *)
+
+BeginPackage["mmaFuncsHK`",{"SymbolizeHK`"}]
 
  (*MessageName[cellsHK,"usage"]= "Display palette to display various cells";*)
  cellsHK::usage="Display palette to display various cells";
@@ -40,9 +42,9 @@ notesHK[x_, tag_String:"history"] := Module[{txt = MessageName[x, tag], txtColor
    color = Lighter[Gray, 0.85]},
   CellPrint[
    TextCell[
-    Panel[Style[txt, txtColor, FontFamily  "Times New Roman",
-      FontSize  14], Background  color], "Print", "PrintUsage
-    ", Background  color, CellFrame  {{0, 0}, {0, 1}}]]]
+    Panel[Style[txt, txtColor, FontFamily -> "Times New Roman",
+      FontSize -> 14], Background -> color], "Print", "PrintUsage
+    ", Background -> color, CellFrame -> {{0, 0}, {0, 1}}]]]
 
 EditNotes[x_, tag_:"history"] :=
   Module[{txt = MessageName[Args, tag]},

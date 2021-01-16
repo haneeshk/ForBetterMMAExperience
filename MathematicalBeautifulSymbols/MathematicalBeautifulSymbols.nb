@@ -1,22 +1,38 @@
-In[1]:=
+In[4]:=
 
-In[2]:= ClearAll[ech]
+
+ClearAll[ech]
+In[7]:=
+
 SetAttributes[ech,HoldFirst]
+In[9]:=
+
 MaTeXFontSize=14;
+In[11]:=
+
 MaTeXPreamble={"\\usepackage[prefix=sol]{xcolor-solarized}","\\usepackage[scaled]{helvet}",
 "\\usepackage[T1]{fontenc}","\\renewcommand\\familydefault{\\sfdefault}"}
+Out[12]= {\usepackage[prefix=sol]{xcolor-solarized},\usepackage[scaled]{helvet},\usepackage[T1]{fontenc},\renewcommand\familydefault{\sfdefault}}
+In[13]:=
+
 <<MaTeX`;
-Out[5]= {\usepackage[prefix=sol]{xcolor-solarized},\usepackage[scaled]{helvet},\usepackage[T1]{fontenc},\renewcommand\familydefault{\sfdefault}}
-In[7]:= 
+
+In[16]:=
+
 
 symb1=MaTeX["{\\color{solbase01} L}",FontSize->MaTeXFontSize,Preamble->MaTeXPreamble];
+In[19]:=
+
 var1=Interpretation[symb1,L];
+In[23]:= symb1
+Out[23]= 
+
 symb2=MaTeX["{\\color{solbase00} D}",FontSize->MaTeXFontSize,Preamble->{"\\usepackage[prefix=sol]{xcolor-solarized}"}];
  var2=Interpretation[symb2,Diameter];
 
 Format[L]:=MaTeX["{\\color{solviolet} L}",FontSize->14,FontSize->MaTeXFontSize, Preamble->MaTeXPreamble];
 Format[Diameter]:=MaTeX["{\\color{solmagenta} D}",FontSize->MaTeXFontSize,Preamble->MaTeXPreamble];
-In[13]:= Plot[Sin[],{,-\[Pi],\[Pi]}]
+Plot[Sin[],{,-\[Pi],\[Pi]}]
 Out[13]= 
 In[14]:= Series[1/(1+)^(1/2),{,0,3}]//TraditionalForm
 Out[14]//TraditionalForm= 1-( )/2+(3 ^2 ^2)/8-(5 ^3 ^3)/16+O(^4)

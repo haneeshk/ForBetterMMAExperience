@@ -1,0 +1,227 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      9984,        226]
+NotebookOptionsPosition[      7095,        164]
+NotebookOutlinePosition[      8749,        204]
+CellTagsIndexPosition[      8706,        201]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Stair step outline.
+\
+\>", "Subsection",ExpressionUUID->"c6d1d395-ed7e-4bf8-8b44-a1138da099ea"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Para 1:",
+ FontWeight->"Plain",
+ FontSlant->"Italic"]], "Text",
+ CellGroupingRules->{
+  "GroupTogetherGrouping", 
+   10000.},ExpressionUUID->"e5257140-782d-43c3-a52a-04bbdd9a1aac"],
+
+Cell[TextData[{
+ "\nStiff biomaterials are studied by the engineering community.(this field \
+is called bio-inpsired engineering). The interest emanates from the need of \
+creating  novel materials with high toughness. Traditional means of enahncing \
+touchness are producing toughness have yielding limited results in the recent \
+years. \n",
+ StyleBox["(What do we mean by stiff biomaterials).",
+  FontFamily->"American Typewriter"],
+ "\nStiff biomaterials are composites, ",
+ StyleBox["\nExpand what we mean by composites.  Stiff bricks, layers, \
+arrangement intricate, and elaborate patterns. The constituents itself have \
+nothing remarkable about them. However, measurements on nacre, bone, antler,  \
+show that these class of SBMs display remarkable amount of toughness compared \
+to their constituents.\n",
+  FontFamily->"American Typewriter",
+  FontSize->13],
+ "With the interesting implication  that the toughness enhancements is \
+achieved through small-scale mechanical design. Thus, the goal of the \
+engineering community has been to discover the mechanical design principles \
+that connect the SBM patterns to their enhanced toughness. \n\n"
+}], "Text",
+ CellGroupingRules->{
+  "GroupTogetherGrouping", 
+   10000.},ExpressionUUID->"b1c21095-9622-463a-8d13-8e279aa989d8"]
+}, Open  ]],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Stair", "-", 
+     RowBox[{"Step", ":", "\n", 
+      RowBox[{"1.", " ", "Levi"}]}]}], "\n", 
+    RowBox[{
+     RowBox[{"2.", " ", "James", " ", "Weaver"}], ",", " ", 
+     RowBox[{"Unifyeidd", " ", "design", " ", 
+      RowBox[{"principles", ".", "\n", "\n", 
+       RowBox[{"Apppearnce", ":", "\n", 
+        RowBox[{"1.", " ", "Joanna", " ", "Aizenberg", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"no", " ", "experiments"}], ",", " ", 
+           RowBox[{"just", " ", "visual", " ", "observation"}]}], 
+          ")"}]}]}]}]}]}], "\n", "\n", 
+    RowBox[{
+     RowBox[{"Walter", " ", "mayer", " ", "does", " ", "experiments"}], ",", 
+     " ", 
+     RowBox[{
+      RowBox[{"but", " ", "I", " ", 
+       RowBox[{"don", "'"}], "t", " ", "what", " ", "is", " ", "his", " ", 
+       "rationale", " ", "for", " ", "arguing", " ", "that", " ", "EA", " ", 
+       "and", " ", "co"}], "-", 
+      RowBox[{"axial", " ", "layers", " ", "are", " ", 
+       RowBox[{
+       "toughn", ".", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]"}]}]}]}]}]}],
+  FontWeight->"Plain"]], "Input",ExpressionUUID->"6e4da0c5-62ba-4627-a1d2-\
+404c113f74e0"],
+
+Cell[TextData[{
+ StyleBox["Para 2:\n",
+  FontWeight->"Plain",
+  FontSlant->"Italic"],
+ StyleBox["The proto for the above investigation has been nacre, bone. \
+(initial experiments were done on them).The toughness enhanced was \
+experimentally proved/detemernied/established.\n Succcessful Synthemetica \
+analogues that micmic the architecture of  bone and nacre have created (Munz, \
+Tomsia, Ritchie). A develeopement aimed in the same direction is \n\
+themimicking the design of pther biomaterials. (Recently to this category has \
+been added coaxial glass from materine sponges.) Most notably, the designs \
+found in marine glass rods. This kind translation is also being performed on \
+the mechanical design found in marine glass rods (cite Jordan Raney, There \
+have been recent efforts at reproducing the mechanical design of marine glass \
+rod with tacit assumption such a design would inevitably lead toughness \
+enhancements.). However, thezse recent efforts is not same at the initial \
+efforts. For instance, the toughness of glass rod has not been directly \
+measured. The efforts appaesr to be motivated by the tacit assumption layers \
+would always enhance toughness.  The primary experimental data/evidence that \
+is tacitly used as evidence to support the implicit hypothesis that marine \
+glass rod are tough  come from observation of strair-step pattersn.  However, \
+we shown in our that the observation strair-step pattern alone is \
+insuffcieinet evidence that the lamellar architecture in glass rod is \
+enahcing their work of fracture. We show that the strain-step patter that \
+appears indistinguisable from patteras cxreated by  genuine toughnes \
+enhancing mechanisms could alternately appear from slip events. \n\nThere are \
+genuine cases where the toughn enhancing mechanism does lead to strair step \
+patter. However, our shows that appearane of stair-step pattern does \
+neccessary evidence of toughness enahcning mechanisms. The main point of our \
+paper is that these recent micmiking efforts would better their  goal if they \
+are precedieded by experimental detemination of the toughness of the \
+biomaterials that aim to mimic. \n\nThe stucture of the paper is as follows. \
+\n\n",
+  FontWeight->"Plain"],
+ StyleBox["Conclusion of the paper",
+  FontWeight->"Bold"],
+ StyleBox["\nAll biomaterials need not necessary be remarkable. \nWe believed \
+that comman origin of the materials (marine animals). Similar appearance \
+might have played a role.  Both are marine. Both are created using \
+bio-mineralization.  Since, it appearing similar itself is not reason enough. \
+This is importance, since dragon fly wings......\n\n2. Mary Boyce, Christine \
+Ortiz\n3. Julia Greer (Diatom, best material in the world)\n\n \n ",
+  FontWeight->"Plain"]
+}], "Text",
+ CellGroupingRules->{
+  "GroupTogetherGrouping", 
+   10000.},ExpressionUUID->"8375280f-a478-4e58-afa6-bac561cff9f6"],
+
+Cell[BoxData[""], "Input",ExpressionUUID->"27d819af-2a07-4002-8492-4f11371e7fc5"],
+
+Cell["\<\
+
+\
+\>", "Text",
+ CellGroupingRules->{
+  "GroupTogetherGrouping", 
+   10000.},ExpressionUUID->"c0eaadba-9f60-428c-a6e7-e97f1e6e8150"],
+
+Cell[BoxData[
+ RowBox[{"NotebookSave", "[", 
+  RowBox[{
+   RowBox[{"EvaluationNotebook", "[", "]"}], ",", 
+   "\"\<StairStepPaperOutlinenb\>\""}], "]"}]], "Input",
+ CellLabel->"In[94]:=",ExpressionUUID->"f62bd947-2505-4def-b336-b539345c71ab"],
+
+Cell[BoxData[
+ RowBox[{"SystemOpen", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellLabel->"In[96]:=",ExpressionUUID->"c06a33bb-9572-42b3-80ba-a02e1d6f0a93"],
+
+Cell["This is some text", "Text",
+ CellChangeTimes->{{3.8179427061666822`*^9, 
+  3.817942708037169*^9}},ExpressionUUID->"b4d9d686-384e-4fd6-8dca-\
+ebf5cbf94b4c"]
+}, Open  ]]
+},
+WindowSize->{1160, 1005},
+WindowMargins->{{115, Automatic}, {23, Automatic}},
+Magnification:>2. Inherited,
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (March 18, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData["Text"], CellMargins -> {{50, 0}, {0, 0}}, FontFamily -> 
+    "Times New Roman", FontSize -> 14, FontWeight -> "Regular", FontSlant -> 
+    "Plain", PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Input"], CellMargins -> {{50, 0}, {0, 0}}], 
+   Cell[
+    StyleData["Subsubsection"], CellMargins -> {{20, 0}, {0, 0}}, FontFamily -> 
+    "Times New Roman", FontSize -> 18, FontWeight -> "Regular", FontSlant -> 
+    "Plain", FontVariations -> {
+     "StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0., 0., 0.]], 
+   Cell[
+    StyleData["Subsection"], FontFamily -> "Times New Roman", FontSize -> 20, 
+    FontWeight -> "Regular", FontSlant -> "Plain", 
+    FontVariations -> {"StrikeThrough" -> False, "Underline" -> False}, 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0.42066071564812696`, 0., 0.01582360570687419]]}, Visible -> 
+  False, FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (March 18, 2020)",
+   StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"b66d73f4-9fb3-402c-b2f0-e47e0d01bfd9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[422, 15, 105, 3, 148, "Subsection",ExpressionUUID->"c6d1d395-ed7e-4bf8-8b44-a1138da099ea"],
+Cell[CellGroupData[{
+Cell[552, 22, 204, 5, 32, "Text",ExpressionUUID->"e5257140-782d-43c3-a52a-04bbdd9a1aac",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[759, 29, 1286, 23, 637, "Text",ExpressionUUID->"b1c21095-9622-463a-8d13-8e279aa989d8",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Open  ]],
+Cell[2060, 55, 1290, 31, 608, "Input",ExpressionUUID->"6e4da0c5-62ba-4627-a1d2-404c113f74e0"],
+Cell[3353, 88, 2904, 46, 1552, "Text",ExpressionUUID->"8375280f-a478-4e58-afa6-bac561cff9f6",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[6260, 136, 81, 0, 33, "Input",ExpressionUUID->"27d819af-2a07-4002-8492-4f11371e7fc5"],
+Cell[6344, 138, 142, 6, 70, "Text",ExpressionUUID->"c0eaadba-9f60-428c-a6e7-e97f1e6e8150",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[6489, 146, 242, 5, 55, "Input",ExpressionUUID->"f62bd947-2505-4def-b336-b539345c71ab"],
+Cell[6734, 153, 181, 3, 55, "Input",ExpressionUUID->"c06a33bb-9572-42b3-80ba-a02e1d6f0a93"],
+Cell[6918, 158, 161, 3, 32, "Text",ExpressionUUID->"b4d9d686-384e-4fd6-8dca-ebf5cbf94b4c"]
+}, Open  ]]
+}
+]
+*)
+
