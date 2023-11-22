@@ -1,6 +1,6 @@
 BeginPackage["hkNotes`"]
 
-Get["/Users/haneeshkesari/Downloads/MaTeX/MaTeX/MaTeX.m"];
+Needs["MaTeX`"];
 
 SetOptions[MaTeX,BasePreamble->{"\\usepackage{lmodern,exscale}",
 "\\usepackage{amsmath,amssymb}",
