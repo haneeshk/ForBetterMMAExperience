@@ -42,16 +42,16 @@ Apply[Defer[D[g[vars],##]] &,
 Transpose[{{vars},{inds}}]/.
 {{var_,0} :> Sequence[],{var_,1}:> {var}}]]
 
-LaTeXMaTeX[BoxData[x_],StandardForm]:=Module[{y,ShowLabel},y=StringReplace[x,"\""->""];
+LaTeXMaTeX[BoxData[x_],StandardForm]:=Module[{y,eqLabel},y=StringReplace[x,"\""->""];
 
-ShowLabel[x_List] := 
- Grid[{x}, Spacings -> 10, Alignment -> {Left, Right}];
-ShowLabel[x_] := x;
+eqLabel[mx_List] := 
+ Grid[{mx}, Spacings -> 10, Alignment -> {Left, Right}];
+eqLabel[mx_] := mx;
 
 
 
 y=StringReplace[y,"\n"..->""];
-ShowLabel[MaTeX[y]]
+eqLabel[MaTeX[y]]
 ]
 
 
