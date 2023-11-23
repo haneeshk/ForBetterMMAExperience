@@ -1,12 +1,28 @@
 (* ::Package:: *)
 
-BeginPackage["HaneeshPackages`"]
+BeginPackage["HaneeshPackages`",{"MaTeX`"}]
 MonthCalendar::usage=
 "MonthCalendar[Year,Month]"
 WMeaning::usage="WMeaning[word]"
 HKmail::usage="HKmail[Receiver,Heading,Messg,file]"
 WSyn::usage="WSyn[word], gives synonyms"
 pdConv::usuage="pdConv[expression], gives the partial derivative in \!\(\*FractionBox[\(\[PartialD]\\\ f\), \(\[PartialD]x\)]\) format"
+
+
+SetOptions[MaTeX,BasePreamble->{"\\usepackage{lmodern,exscale}",
+"\\usepackage{amsmath,amssymb}",
+"\\usepackage{mathtools}",
+"\\newcommand{\\bs}[1]{\\boldsymbol{#1}}",
+"\\newcommand{\\ag}[1]{\\left[ #1 \\right]}",
+"\\newcommand{\\grp}[1]{\\underbracket[0.140ex][0.2ex]{#1}}",
+"\\newcommand{\\pr}[1]{\\left( #1 \\right)}",
+"\\newcommand{\\brs}[1]{\\left\\{ #1 \\right\\}}"
+}];
+
+LaTeXMaTeX::usage="Formats a string using MaTeX"
+
+
+
 
 
 Begin["`Private`"]
@@ -25,6 +41,9 @@ pdConv[f_]:=TraditionalForm[f/.Derivative[inds__][g_][vars__]:>
 Apply[Defer[D[g[vars],##]] &,
 Transpose[{{vars},{inds}}]/.
 {{var_,0} :> Sequence[],{var_,1}:> {var}}]]
+
+LaTeXMaTeX[BoxData[x_],StandardForm]:=Module[{y},y=StringReplace[x,"\""->""];y=StringReplace[y,"\n"..->""];MaTeX[y]
+]
 
 
 End[]
