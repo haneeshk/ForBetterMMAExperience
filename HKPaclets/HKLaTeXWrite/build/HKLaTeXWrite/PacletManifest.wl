@@ -1,0 +1,31 @@
+<|
+    "Files"
+    ->
+    {
+        <|
+            "File"
+            ->
+            File[
+                "Kernel/HKLaTeXWrite.mx"
+            ]
+            ,
+            "Hash"
+            ->
+            "b500dc2c83abc31b7396b57858b09074b98cdf79afe9cd958041bb9ede25ca0d"
+                
+        |>
+        ,
+        <|
+            "File"
+            ->
+            File[
+                "Kernel/init.m"
+            ]
+            ,
+            "Hash"
+            ->
+            "92084d9d4e4cc281ba2fc95f4996c1555465dd0ec9ea506f39ab5891ab2aa439"
+                
+        |>
+    }
+|>

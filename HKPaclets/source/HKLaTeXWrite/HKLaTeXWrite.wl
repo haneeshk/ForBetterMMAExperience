@@ -1,0 +1,34 @@
+(* ::Package:: *)
+
+BeginPackage["HKLaTeXWrite`"]
+
+ReplaceSelectionWithFunction::usage = "ReplaceSelectionWithFunction[] replaces the current notebook selection with a rendered MaTeX expression."
+
+Needs["MaTeX`"]
+SetOptions[MaTeX, "FontSize" -> 20];
+SetOptions[MaTeX,Preamble->{"\\usepackage{bm}","\\usepackage{amsfonts,amsmath}","\\usepackage{amsthm}","\\usepackage{thmtools,thm-restate}","\\usepackage{appendix}","\\usepackage{mathtools}","\\usepackage{xcolor}","\\usepackage{natbib}","\\usepackage{charter}","\\usepackage{todonotes}","\\usepackage[normalem]{ulem}","\\usepackage[skip=13pt,indent=10pt]{parskip}","\\usepackage{mathabx}","\\usepackage{amsmath}","\\newcommand{\\Cbb}{\\mathbb{C}}","\\newcommand{\\Rbb}{\\mathbb{R}}","\\newcommand{\\Dc}{\\mathcal{D}}","\\newcommand{\\Ic}{\\mathcal{I}}","\\newcommand{\\Kc}{\\mathcal{K}}","\\newcommand{\\Mc}{\\mathcal{M}}","\\newcommand{\\Oc}{\\mathcal{O}}","\\newcommand{\\Sc}{\\mathcal{S}}","\\newcommand{\\Uc}{\\mathcal{U}}","\\newcommand{\\Vc}{\\mathcal{V}}","\\newcommand{\\Asf}{\\mathsf{A}}","\\newcommand{\\Bsf}{\\mathsf{B}}","\\newcommand{\\Csf}{\\mathsf{C}}","\\newcommand{\\Dsf}{\\mathsf{D}}","\\newcommand{\\Esf}{\\mathsf{E}}","\\newcommand{\\Fsf}{\\mathsf{F}}","\\newcommand{\\Gsf}{\\mathsf{G}}","\\newcommand{\\Hsf}{\\mathsf{H}}","\\newcommand{\\Isf}{\\mathsf{I}}","\\newcommand{\\Jsf}{\\mathsf{J}}","\\newcommand{\\Ksf}{\\mathsf{K}}","\\newcommand{\\Lsf}{\\mathsf{L}}","\\newcommand{\\Msf}{\\mathsf{M}}","\\newcommand{\\Nsf}{\\mathsf{N}}","\\newcommand{\\Osf}{\\mathsf{O}}","\\newcommand{\\Psf}{\\mathsf{P}}","\\newcommand{\\Qsf}{\\mathsf{Q}}","\\newcommand{\\Rsf}{\\mathsf{R}}","\\newcommand{\\Ssf}{\\mathsf{S}}","\\newcommand{\\Tsf}{\\mathsf{T}}","\\newcommand{\\Usf}{\\mathsf{U}}","\\newcommand{\\Vsf}{\\mathsf{V}}","\\newcommand{\\Wsf}{\\mathsf{W}}","\\newcommand{\\Xsf}{\\mathsf{X}}","\\newcommand{\\Ysf}{\\mathsf{Y}}","\\newcommand{\\Zsf}{\\mathsf{Z}}","\\newcommand{\\msf}{\\mathsf{m}}","\\newcommand{\\nsf}{\\mathsf{n}}","\\newcommand{\\Absf}{\\bm{\\mathsf{A}}}","\\newcommand{\\Bbsf}{\\bm{\\mathsf{B}}}","\\newcommand{\\Cbsf}{\\bm{\\mathsf{C}}}","\\newcommand{\\Dbsf}{\\bm{\\mathsf{D}}}","\\newcommand{\\Ebsf}{\\bm{\\mathsf{E}}}","\\newcommand{\\Ibsf}{\\bm{\\mathsf{I}}}","\\newcommand{\\Lbsf}{\\bm{\\mathsf{L}}}","\\newcommand{\\Kbsf}{\\bm{\\mathsf{K}}}","\\newcommand{\\Mbsf}{\\bm{\\mathsf{M}}}","\\newcommand{\\Nbsf}{\\bm{\\mathsf{N}}}","\\newcommand{\\Pbsf}{\\bm{\\mathsf{P}}}","\\newcommand{\\Qbsf}{\\bm{\\mathsf{Q}}}","\\newcommand{\\Ubsf}{\\bm{\\mathsf{U}}}","\\newcommand{\\Rbsf}{\\bm{\\mathsf{R}}}","\\newcommand{\\absf}{\\bm{\\mathsf{a}}}","\\newcommand{\\Sbsf}{\\bm{\\mathsf{S}}}","\\newcommand{\\Vbsf}{\\bm{\\mathsf{V}}}","\\newcommand{\\Wbsf}{\\bm{\\mathsf{W}}}","\\newcommand{\\Xbsf}{\\bm{\\mathsf{X}}}","\\newcommand{\\Ybsf}{\\bm{\\mathsf{Y}}}","\\newcommand{\\Zbsf}{\\bm{\\mathsf{Z}}}","\\newcommand{\\Itbsf}{\\widetilde{\\Ibsf}}","\\newcommand{\\Ytbsf}{\\widetilde{\\Ybsf}}","\\newcommand{\\ytbsf}{\\widetilde{\\ybsf}}","\\newcommand{\\Xtbsf}{\\widetilde{\\Xbsf}}","\\newcommand{\\xtbsf}{\\widetilde{\\xbsf}}","\\newcommand{\\cbsf}{\\bm{\\mathsf{c}}}","\\newcommand{\\ebsf}{\\bm{\\mathsf{e}}}","\\newcommand{\\kbsf}{\\bm{\\mathsf{k}}}","\\newcommand{\\lbsf}{\\bm{\\mathsf{l}}}","\\newcommand{\\mbsf}{\\bm{\\mathsf{m}}}","\\newcommand{\\nbsf}{\\bm{\\mathsf{n}}}","\\newcommand{\\pbsf}{\\bm{\\mathsf{p}}}","\\newcommand{\\qbsf}{\\bm{\\mathsf{q}}}","\\newcommand{\\ubsf}{\\bm{\\mathsf{u}}}","\\newcommand{\\vbsf}{\\bm{\\mathsf{v}}}","\\newcommand{\\wbsf}{\\bm{\\mathsf{w}}}","\\newcommand{\\xbsf}{\\bm{\\mathsf{x}}}","\\newcommand{\\ybsf}{\\bm{\\mathsf{y}}}","\\newcommand{\\zbsf}{\\bm{\\mathsf{z}}}","\\newcommand{\\ybsfs}{\\ybsf^{\\star}}","\\newcommand{\\Ybsfs}{\\Ybsf^{\\star}}","\\newcommand{\\Ytbsfs}{\\Ytbsf^{\\star}}","\\newcommand{\\Lambdabsf}{\\bm{\\mathsf{\\Lambda}}}","\\newcommand{\\omegabsf}{\\bm{\\mathsf{\\omega}}}","\\DeclareMathOperator*{\\argmin}{argmin}","\\newcommand{\\DIAG}{{\\sf diag}}","\\newcommand{\\TRACE}{{\\sf Tr}}","\\newcommand{\\HODGE}[1]{[#1]_\\times}","\\newcommand{\\SUCHTHAT}{~:~}","\\newcommand{\\IdentityMatrix}{\\Ibsf}","\\newcommand{\\ZeroMatrix}{\\bm{\\mathsf{0}}}","\\newcommand{\\red}[1]{{\\color{red}#1}}","\\newcommand{\\blue}[1]{{\\color{blue}#1}}","\\newcommand{\\green}[1]{{\\color{green}#1}}","\\newcommand{\\magenta}[1]{{\\color{magenta}#1}}","\\newcommand{\\ag}[1]{\\left[#1 \\right ]}","\\renewcommand{\\u}[1]{\\boldsymbol{#1}}","\\newcommand{\\ou}[1]{\\overline{\\u{#1}}}","\\newcommand{\\usf}[1]{\\u{\\mathsf #1}}","\\newcommand{\\busf}[1]{\\overline{\\u{\\mathsf #1}}}","\\newcommand{\\husf}[1]{\\hat{\\usf{#1}}}","\\newcommand{\\pr}[1]{\\left( #1 \\right)}","\\newcommand{\\set}[2]{\\left\\{#1\\, \\big|\\, #2\\right\\}}","\\newcommand{\\norm}[1]{\\left\\lVert #1\\right\\rVert}","\\newcommand{\\fprod}[1]{\\langle #1 \\rangle_{F}}","\\newcommand{\\abs}[1]{\\left\\lvert #1\\right\\rvert}","\\newcommand{\\pder}[2]{\\frac{\\partial #1}{\\partial #2}}","\\newcommand{\\lsc}[1]{{}^{#1}\\negthickspace\\thinspace}","\\newcommand{\\Sym}[1]{\\textsf{Sym}\\ag{#1}}","\\newcommand{\\Uni}{\\pr{\\mathcal{M}_{n \\times n}\\pr{\\mathbb{R}},\\|\\cdot\\|_F}}","\\newcommand{\\Skew}[1]{\\textsf{Skew}\\ag{#1}}","\\newcommand{\\R}{\\mathbb{R}}","\\newcommand{\\A}{A}","\\newcommand{\\Mspace}[1]{\\mathbb{M}^{#1}}","\\newcommand{\\Kspace}[1]{\\mathbb{K}^{#1}}","\\newcommand{\\Sspace}[1]{\\mathbb{S}^{#1}}","\\newcommand{\\Mvspace}[1]{\\mathcal{M}_{#1}}","\\newcommand{\\Mprime}[1]{\\widetilde{\\mathcal{M}}_{#1}}","\\newcommand{\\Mpprod}[1]{\\langle #1 \\rangle_{\\sim}}","\\newcommand{\\Kvspace}[1]{\\mathcal{K}_{#1}}","\\newcommand{\\Svspace}[1]{\\mathcal{S}_{#1}}","\\newcommand{\\Mipspace}[1]{\\mathbb{M}^{#1}}","\\newcommand{\\Kipspace}[1]{\\mathbb{K}^{#1}}","\\newcommand{\\Sipspace}[1]{\\mathbb{S}^{#1}}","\\newcommand{\\Mset}[1]{M^{#1}}","\\newcommand{\\Kset}[1]{K^{#1}}","\\newcommand{\\Sset}[1]{S^{#1}}","\\newcommand{\\Oset}[1]{\\mathcal{O}_{#1}}","\\newcommand{\\Oprime}[1]{\\widetilde{\\mathcal{O}}_{#1}}","\\newcommand{\\Ktwoset}[1]{\\mathcal{K}^{\\rm sq}_{#1}}","\\newcommand{\\YWtodo}[1]{\\textcolor{red}{#1}}","\\DeclareMathOperator*{\\argmax}{arg\\,max}"}]
+
+Begin["`Private`"]
+
+SetOptions[EvaluationNotebook[], NotebookEventActions -> {
+  {"KeyDown", "~"} :> ReplaceSelectionWithFunction[]
+}];
+
+ReplaceSelectionWithFunction[] := Module[{nb, selection, plainText, result},
+  nb = EvaluationNotebook[];
+  selection = NotebookRead[nb];
+  selection = selection //. RowBox[x__] :> List[x];
+  selection = (List @@ selection) // Flatten;
+  selection = StringJoin @@ selection;
+
+  If[selection === {}, Return[]]; (* Do nothing if no selection *)
+
+  plainText = ToString[selection];
+  result = MaTeX[StringReplace[plainText, "\"" -> ""]];
+  result = Evaluate[result];
+  CopyToClipboard[result];
+  Paste[];
+]
+
+End[]
+EndPackage[]

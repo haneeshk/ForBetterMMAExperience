@@ -1,0 +1,6 @@
+Notebook[{
+Cell["HKLaTeXWrite Guide", "Title"],
+Cell["This is the guide for HKLaTeXWrite.", "Text"]
+},
+StyleDefinitions -> "Wolfram Documentation.nb"
+]
